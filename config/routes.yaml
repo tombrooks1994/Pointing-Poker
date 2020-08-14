@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+createSession:
+    path: /createSession
+    controller: App\Controller\DefaultController::createPlanningPokerSession

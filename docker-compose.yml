@@ -1,0 +1,37 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: laravel-docker
+    ports:
+      - 80:80
+    volumes:
+      - .:/srv/app
+    links:
+      - mysql
+      - redis
+    environment:
+      DB_HOST: mysql
+      DB_DATABASE: laravel_docker
+      DB_USERNAME: app
+      DB_PASSWORD: password
+      REDIS_HOST: redis
+      SESSION_DRIVER: redis
+      CACHE_DRIVER: redis
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./docker/mysql:/docker-entrypoint-initdb.d
+    ports:
+      - 13306:3306
+    environment:
+      MYSQL_DATABASE: laravel_docker
+      MYSQL_USER: app
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+  redis:
+    image: redis:4.0-alpine
+    ports:
+      - 16379:6379

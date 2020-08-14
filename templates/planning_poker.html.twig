@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary mb-2">Start a Session</button>
+                {% include 'form/form.html.twig' %}
+                {% for planningPokerNumber in planningPokerNumbers %}
+                    <input type="button" class="btn btn-primary" value="{{ planningPokerNumber }}"/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

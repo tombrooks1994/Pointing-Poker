@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 bg-light border rounded p-4">
+                <h1>Welcome to Planning Poker</h1>
+                <p>
+                    <strong>Planning Poker</strong> is a pointing system for agile teams to point their tickets using
+                    the Fibonacci sequence. To do this click start a session or join a session!
+                </p>
+                {% include 'form/session_form.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

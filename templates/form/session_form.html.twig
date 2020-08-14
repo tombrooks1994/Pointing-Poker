@@ -1,0 +1,33 @@
+<hr/><p>If you would like to start a session enter your name below and click <strong>Start</strong></p>
+<form method="post" action="{{ path('createSession') }}" data-start-session-form>
+    <div class="form-row align-items-center">
+        <div class="col-4">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Start a session</div>
+                </div>
+                <input type="text" class="form-control" id="name" name="name" data-participant-name placeholder="Enter your name"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <button type="submit" class="btn btn-block btn-primary mb-2">Start</button>
+        </div>
+    </div>
+</form><hr/>
+
+<p>If you would like to start a session enter the session id below and click <strong>Join</strong></p>
+<form data-join-session-form>
+    <div class="form-row align-items-center">
+        <div class="col-4">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Join a session</div>
+                </div>
+                <input type="number" class="form-control" id="inlineFormInputGroup" data-participant-name placeholder="Enter Session ID"/>
+            </div>
+        </div>
+        <div class="col-1">
+            <button type="submit" class="btn btn-block btn-primary mb-2">Join</button>
+        </div>
+    </div>
+</form>
